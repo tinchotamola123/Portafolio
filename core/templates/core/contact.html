@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block image-header %} contact {% endblock %}
+
+{% block title-header %} 
+<div>
+    <h1 class="display-4 fw-bold">Contacto</h1>
+</div>
+<div>
+    <h3 class="fs-2">Asesoría personal</h3>
+</div>
+{% endblock %}
+
+{% block content %} 
+
+{% load static %}
+
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        
+        <p><b>Email:</b> tinchotamola123@gmail.com</p>
+        <p><b>Teléfono:</b> +54 9 2617213130</p>
+        <p><b>Honorarios:</b> Full Time</p>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-primary rounded-pill btn-sm" href="{% static 'core/cv/CV-Martin-Tamola-IT.pdf' %}" target="blank
+                    ">Descargar CV</a>
+    </div>
+</div>
+
+{% endblock %}
+
+

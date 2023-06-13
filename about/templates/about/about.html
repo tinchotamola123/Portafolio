@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Sobre mi {% endblock %}
+
+{% block image-header %} about {% endblock %}
+
+{% block title-header %} 
+<div>
+    <h1 class="display-4 fw-bold">Martin Tamola</h1>
+</div>
+<div>
+    <h3 class="fs-2">Desarrollador Web</h3>
+</div>
+{% endblock %}
+
+{% block content %} 
+
+{% load static %}
+
+<div class="row d-flex">
+    <div class="col-4 offset-md-auto">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.jpg' %} alt="">
+    </div>
+    <div class="col-6">
+        <h2 class="fw-bold">Realice los siguientes cursos:</h2>
+        <h3><br>
+            
+        
+            -Desarrollo Web(HTML , CSS)
+            <br>
+            
+            -Java Script
+            <br>
+            
+            -React 
+            <br>
+            
+            -Python 
+            <br>
+            -Django
+            <br>
+            <br> 
+            <strong>En coder House.</strong></h3>
+    </div>
+</div> 
+
+<div class="row d-flex pt-5">
+    <div class="col-12">
+        <h2 class="fw-bold">Formación Académica</h2>
+        {% for course in courses %}
+
+        <h3>{{ course.title }}</h3>
+        
+        <p><strong>Descripción:</strong> {{ course.description }} </p>
+
+        <hr>
+        {% endfor %}
+
+        <br>
+
+        <h2 class="fw-bold">Conocimientos</h2>
+        <section class="skills" id="skills">
+            <div class="skills__container" id="skills">
+
+                {% for skill in skills %}
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={{ skill.image.url }} alt="html5">
+                    </div>
+
+                    <div class="skill__texto">
+                        <p class="skill__titulo">{{ skill.title }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+    </section>
+    <div class="text-center">
+        <a class="btn btn-primary rounded-pill btn-sm" href="{% static 'core/cv/CV-Martin-Tamola-IT.pdf' %}" target="blank
+                    ">Descargar CV</a>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
+
